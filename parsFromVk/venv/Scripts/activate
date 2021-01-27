@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Rio\PycharmProjects\parfFromVk\venv"
+VIRTUAL_ENV="C:\Users\Rio\PycharmProjects\parsFromVk\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

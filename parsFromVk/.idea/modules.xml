@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../parsFromVk/.idea/parsFromVk.iml" filepath="$PROJECT_DIR$/../parsFromVk/.idea/parsFromVk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/parsFromVk.iml" filepath="$PROJECT_DIR$/.idea/parsFromVk.iml" />
     </modules>
   </component>
 </project>

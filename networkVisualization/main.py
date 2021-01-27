@@ -13,13 +13,22 @@ def pars():
         file=open(path,'r')
     lines = file.readlines()
     result = list()
-    i = 0
-    for line in lines:
-        result.append(line.split("https://vk.com/id"))
-        del result[i][0]
-        result[i][0]=result[i][0].replace("\t","")
-        result[i][1]=result[i][1].replace("\n","")
-        i+=1
+    print("Выбирите формат датасет файла. 0 - id id, 1 - link\\id link\\id")
+    dataset_format = int(input())
+    if(dataset_format == 0):
+        for line in lines:
+            line = line.partition(' ')
+            result.append([line[0],line[2]])
+    if (dataset_format == 1):
+        i = 0
+        for line in lines:
+            print(line)
+            result.append(line.split("https://vk.com/id"))
+            del result[i][0]
+            result[i][0] = result[i][0].replace("\t", "")
+            result[i][1] = result[i][1].replace("\n", "")
+            i += 1
+
     file.close()
     number_of_appearence=get_number_of_appearence(result)
     for i in range(len(result)):
@@ -88,7 +97,7 @@ def visualization():
     layout='test'
     G = Network(height='1000px',
                 width= '1000px',
-                directed=True,
+                #directed=True,
                 heading='Social graph of friends',
                 )
     print("Введите количество связей(вершин) которые хотите нарисовать. Если хотите нарисовать все впишите 0")
@@ -96,7 +105,7 @@ def visualization():
     if(amount_of_printed_nodes == '0'):
         amount_of_printed_nodes =len(ids)
     i = 0
-    while i < amount_of_printed_nodes:
+    while i < int(amount_of_printed_nodes):
         if (ids[i][2] > 100):
             size_ = 100
         else:
